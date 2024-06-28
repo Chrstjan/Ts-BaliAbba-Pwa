@@ -1,3 +1,41 @@
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2666666667);
+  width: 100%;
+}
+.main-header .image-container .mobile-header-logo {
+  width: 16vw;
+  padding: 0rem 0.3rem;
+}
+.main-header .image-container .desktop-header-logo {
+  display: none;
+}
+.main-header .icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#hamburger {
+  display: block;
+}
+#hamburger .bar {
+  display: block;
+  margin: 4px 2px;
+  width: 24px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 6px;
+}
+
 html {
   scroll-behavior: smooth;
 }

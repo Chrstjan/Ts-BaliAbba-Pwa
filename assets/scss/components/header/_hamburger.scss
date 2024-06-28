@@ -1,0 +1,16 @@
+@use "../../helpers/variables" as v;
+@use "../../helpers/mixins" as m;
+@use "../../helpers/placeholders";
+
+#hamburger {
+  display: block;
+
+  .bar {
+    display: block;
+    margin: 4px 2px;
+    width: 24px;
+    height: 3px;
+    background: v.$main-header-logo-color;
+    border-radius: 6px;
+  }
+}

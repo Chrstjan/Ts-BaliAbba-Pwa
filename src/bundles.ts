@@ -1,3 +1,9 @@
-import { getDummyData } from "./Components/app.js";
+import { getAllCategories } from "./Components/Categories/getCategories.js";
+import { getAllProducts } from "./Components/Products/getProducts.js";
 
-getDummyData();
+const initPage = async () => {
+  getAllProducts();
+  getAllCategories();
+};
+
+initPage();

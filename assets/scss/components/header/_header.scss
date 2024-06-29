@@ -6,7 +6,7 @@
   @include m.flexBox(row, center, center, 0.3rem);
   position: fixed;
   top: 0;
-  border-bottom: 1px solid v.$main-header-border-bottom;
+  border-bottom: 1px solid v.$main-header-border-color;
   width: 100%;
 
   .image-container {

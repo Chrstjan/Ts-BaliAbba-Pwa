@@ -1,0 +1,28 @@
+@use "../../helpers/variables" as v;
+@use "../../helpers/mixins" as m;
+@use "../../helpers/placeholders";
+
+.main-footer {
+  border-top: 1px solid v.$main-header-border-color;
+  @include m.flexBox(column, center, center, 0.7rem);
+  position: absolute;
+  bottom: 0;
+
+  .footer-header {
+    text-align: center;
+  }
+
+  .contact-info {
+    border-top: 1px solid v.$main-header-border-color;
+    width: 80%;
+    text-align: center;
+    @extend %reset-ul-list;
+  }
+
+  .faq-article {
+    border-top: 1px solid v.$main-header-border-color;
+    width: 60%;
+    text-align: center;
+    @extend %reset-ul-list;
+  }
+}

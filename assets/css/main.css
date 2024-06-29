@@ -1,3 +1,10 @@
+.main-footer .contact-info ul, .main-footer .faq-article ul {
+  padding: 0;
+}
+.main-footer .contact-info ul li, .main-footer .faq-article ul li {
+  list-style-type: none;
+}
+
 .main-header {
   display: flex;
   flex-direction: row;
@@ -34,6 +41,30 @@
   height: 3px;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 6px;
+}
+
+.main-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.2666666667);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  position: absolute;
+  bottom: 0;
+}
+.main-footer .footer-header {
+  text-align: center;
+}
+.main-footer .contact-info {
+  border-top: 1px solid rgba(0, 0, 0, 0.2666666667);
+  width: 80%;
+  text-align: center;
+}
+.main-footer .faq-article {
+  border-top: 1px solid rgba(0, 0, 0, 0.2666666667);
+  width: 60%;
+  text-align: center;
 }
 
 html {

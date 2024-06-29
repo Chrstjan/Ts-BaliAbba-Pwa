@@ -11,6 +11,7 @@ Modular ES6 Typescript with Scss atom design styling
 
 # Pages:
 
+.
 Github Page:
 
 Netlify:

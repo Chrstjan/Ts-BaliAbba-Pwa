@@ -1,15 +1,25 @@
 @use "../../helpers/variables" as v;
 @use "../../helpers/mixins" as m;
 @use "../../helpers/placeholders";
+@use "../../helpers/fonts";
 
 .main-footer {
   border-top: 1px solid v.$main-header-border-color;
   @include m.flexBox(column, center, center, 0.7rem);
-  position: absolute;
-  bottom: 0;
+  background: v.$footer-background;
+  // position: absolute;
+  // bottom: 0;
 
   .footer-header {
+    padding: 0rem 0.7rem;
     text-align: center;
+    h3 {
+      @extend %BaliAbba-header;
+    }
+
+    p {
+      @extend %bread-text;
+    }
   }
 
   .contact-info {
@@ -17,6 +27,7 @@
     width: 80%;
     text-align: center;
     @extend %reset-ul-list;
+    @extend %bread-text;
   }
 
   .faq-article {
@@ -24,5 +35,6 @@
     width: 60%;
     text-align: center;
     @extend %reset-ul-list;
+    @extend %bread-text;
   }
 }

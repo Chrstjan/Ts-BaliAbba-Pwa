@@ -1,6 +1,7 @@
 @use "../../helpers/variables" as v;
 @use "../../helpers/mixins" as m;
 @use "../../helpers/placeholders";
+@use "../../helpers/fonts";
 
 .main-header {
   @include m.flexBox(row, center, center, 0.3rem);
@@ -8,6 +9,9 @@
   top: 0;
   border-bottom: 1px solid v.$main-header-border-color;
   width: 100%;
+  padding-left: 0.6rem;
+  z-index: 99;
+  background: v.$header-background;
 
   .image-container {
     .mobile-header-logo {
@@ -20,7 +24,31 @@
     }
   }
 
+  .searchbar-container {
+    .searchbar {
+      position: relative;
+      padding: 0.3rem 0.2rem;
+      border-radius: 6px;
+      border: 1px solid v.$main-header-border-color;
+
+      &::placeholder {
+        @extend %bread-text;
+      }
+    }
+
+    .search-icon {
+      width: 5vw;
+      position: absolute;
+      top: 30%;
+      right: 36%;
+    }
+  }
+
   .icons-container {
     @include m.flexBox(row, center, center, 0.5rem);
+
+    img {
+      width: 10vw;
+    }
   }
 }

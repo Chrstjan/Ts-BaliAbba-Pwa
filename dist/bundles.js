@@ -7,9 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { buildLoadingAnimation } from "./Components/Misc/loadingAnimation.js";
 import { getAllCategories } from "./Components/Categories/getCategories.js";
 import { getAllProducts } from "./Components/Products/getProducts.js";
 const initPage = () => __awaiter(void 0, void 0, void 0, function* () {
+    buildLoadingAnimation();
     getAllProducts();
     getAllCategories();
 });

@@ -1,0 +1,25 @@
+//Sub Categories
+export const allProducts = [];
+export const beautyProdcuts = [];
+export const fragrancesProducts = [];
+export const skinCareProducts = [];
+export const furnitureProducts = [];
+export const groceriesProducts = [];
+export const homeDecorationProducts = [];
+export const kitchenAccessoriesProducts = [];
+export const laptopProducts = [];
+export const mobileAccessoriesProducts = [];
+export const tabletsProducts = [];
+export const sunglassesProducts = [];
+export const mensShirtsProducts = [];
+export const mensShoesProducts = [];
+export const mensWatchesProducts = [];
+export const topsProducts = [];
+export const womensDressesProducts = [];
+export const womensShoesProducts = [];
+export const womensWatchesProducts = [];
+export const womensBagsProducts = [];
+export const womensJewelleryProducts = [];
+export const motorcycleProducts = [];
+export const vehicleProducts = [];
+export const sportsAccessoriesProducts = [];

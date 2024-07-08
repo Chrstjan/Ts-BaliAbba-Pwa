@@ -1,3 +1,10 @@
+export interface productsArray {
+  limit: number;
+  products: products[];
+  skip: number;
+  total: number
+}
+
 export interface products {
   availabityStatus: string;
   brand: string;

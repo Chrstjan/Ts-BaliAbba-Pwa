@@ -1,9 +1,27 @@
 import { productCategory } from "../../Utils/enums.js";
-import { products } from "../../Utils/interface.js";
-import { beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts } from "./productCategories.js";
+import { products, productsArray } from "../../Utils/interface.js";
+import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
+import {beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts } from "./productCategories.js";
 
-export const receivedProducts = async (products: products) => {
-  let allProductsArray = products.products;
+export let allProductsArray: products[] = [];
+
+export const receivedProducts = async (products: productsArray) => {
+  console.log(products);
+  
+  allProductsArray = [...products.products];
+
+  let randomlySelectedProducts: products[] = [];
+
+  randomlySelectedProducts.push(
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+  );
+  
+  buildFeaturedProducts(randomlySelectedProducts);
   sortProducts(allProductsArray);
 };
 

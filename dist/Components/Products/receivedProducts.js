@@ -8,9 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { productCategory } from "../../Utils/enums.js";
+import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
 import { beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts } from "./productCategories.js";
+export let allProductsArray = [];
 export const receivedProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
-    let allProductsArray = products.products;
+    console.log(products);
+    allProductsArray = [...products.products];
+    let randomlySelectedProducts = [];
+    randomlySelectedProducts.push(allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)]);
+    buildFeaturedProducts(randomlySelectedProducts);
     sortProducts(allProductsArray);
 });
 export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {

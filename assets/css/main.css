@@ -18,7 +18,7 @@
   font-size: 19px;
 }
 
-.main-footer .footer-header p, .main-footer .contact-info, .main-footer .faq-article, .main-header .searchbar-container .searchbar::placeholder {
+.products-container, .main-footer .footer-header p, .main-footer .contact-info, .main-footer .faq-article, .main-header .searchbar-container .searchbar::placeholder {
   font-family: "Roboto";
   font-size: 19px;
 }
@@ -129,6 +129,48 @@
   animation: loadingSpin 1.2s infinite linear;
 }
 
+.products-container {
+  background: rgba(203, 232, 235, 0.2666666667);
+}
+.products-container .featured-header {
+  margin-top: 3.2rem;
+  text-align: center;
+}
+.products-container .featured-header h4 {
+  margin-bottom: 0rem;
+}
+.products-container .featured-product-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.products-container .featured-product-cards .featured-product {
+  border: 2px solid rgba(221, 221, 221, 0.5333333333);
+  border-radius: 4px;
+  text-align: center;
+  background: rgba(254, 248, 248, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  max-height: 24vh;
+}
+.products-container .featured-product-cards .featured-product .figure-header img {
+  width: 26vw;
+  height: 10vh;
+  max-height: 24vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.products-container .featured-product-cards .featured-product .figure-header h3 {
+  font-size: 18px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -144,5 +186,5 @@ body {
   font-family: sans-serif, Arial, Helvetica;
 }
 .main-container #app {
-  height: 100vh;
+  height: 90vh;
 }

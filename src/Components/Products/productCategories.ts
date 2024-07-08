@@ -1,7 +1,6 @@
 import { products } from "../../Utils/interface.js";
 
 //Sub Categories
-export const allProducts: products[] = [];
 export const beautyProducts: products[] = [];
 export const fragrancesProducts: products[] = [];
 export const skinCareProducts: products[] = [];

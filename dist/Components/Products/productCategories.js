@@ -1,5 +1,4 @@
 //Sub Categories
-export const allProducts = [];
 export const beautyProducts = [];
 export const fragrancesProducts = [];
 export const skinCareProducts = [];

@@ -1,0 +1,46 @@
+@use "../../../helpers/variables" as v;
+@use "../../../helpers/mixins" as m;
+@use "../../../helpers/placeholders" as p;
+@use "../../../helpers/fonts";
+
+.products-container {
+    background: v.$featured-products-background;
+    @extend %bread-text;
+
+    .featured-header {
+        margin-top: 3.2rem;
+        text-align: center;
+
+        h4 {
+            margin-bottom: 0rem;
+        }
+    }
+
+    .featured-product-cards {
+        @include m.flexBox(row, flex-start, center, 0.7rem);
+        overflow-x: auto;
+        overflow-y: hidden;
+    
+        .featured-product {
+            border: 2px solid #dddddd88;
+            border-radius: 4px;
+            text-align: center;
+            background: v.$featured-product-card-background;
+            @include m.flexBox(column, center, center, 0.5rem);
+            max-height: 24vh;
+    
+            .figure-header {
+                img {
+                    width: 26vw;
+                    height: 10vh;
+                    max-height: 24vh;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

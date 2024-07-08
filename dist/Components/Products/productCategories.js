@@ -1,6 +1,6 @@
 //Sub Categories
 export const allProducts = [];
-export const beautyProdcuts = [];
+export const beautyProducts = [];
 export const fragrancesProducts = [];
 export const skinCareProducts = [];
 export const furnitureProducts = [];
@@ -8,6 +8,7 @@ export const groceriesProducts = [];
 export const homeDecorationProducts = [];
 export const kitchenAccessoriesProducts = [];
 export const laptopProducts = [];
+export const smartphoneProducts = [];
 export const mobileAccessoriesProducts = [];
 export const tabletsProducts = [];
 export const sunglassesProducts = [];

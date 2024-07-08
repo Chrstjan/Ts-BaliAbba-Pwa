@@ -8,5 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 export const receivedProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
+    sortProducts(products);
+});
+export const allProducts = [];
+export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(products);
 });

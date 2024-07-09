@@ -11,6 +11,7 @@ import { productCategory } from "../../Utils/enums.js";
 import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
 import { beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts } from "./productCategories.js";
 export let allProductsArray = [];
+let supCategoryArray = [];
 export const receivedProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(products);
     allProductsArray = [...products.products];
@@ -103,5 +104,33 @@ export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, func
         };
         sortProductsCallback(allProductCategories);
     });
-    console.log(smartphoneProducts);
+    supCategoryArray = [
+        {
+            supCategoryName: "Home Decoration",
+            subCategories: {
+                homeDecorationProducts,
+                furnitureProducts
+            },
+            thumbnail: "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+        },
+        {
+            supCategoryName: "Skin Products",
+            subCategories: {
+                beautyProducts,
+                fragrancesProducts,
+                skinCareProducts
+            },
+            thumbnail: "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png",
+        },
+        {
+            supCategoryName: "Kitchen",
+            subCategories: {
+                kitchenAccessoriesProducts,
+                groceriesProducts
+            },
+            thumbnail: "https://cdn.dummyjson.com/products/images/kitchen-accessories/Boxed%20Blender/thumbnail.png",
+        },
+    ];
+    console.log("Sup Categories");
+    console.log(supCategoryArray);
 });

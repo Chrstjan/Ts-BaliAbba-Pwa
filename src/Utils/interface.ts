@@ -35,3 +35,13 @@ export interface productCategories {
   slug: string;
   url: string;
 }
+
+export interface subCategories {
+  subCategories: products[];
+}
+
+export interface supProductCategory { 
+  supCategoryName: string;
+  subCategories: subCategories;
+  thumbnail: string;
+}

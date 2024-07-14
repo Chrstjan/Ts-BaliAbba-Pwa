@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { productCategory } from "../../Utils/enums.js";
 import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
-import { beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts } from "./productCategories.js";
+import { beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts, } from "./productCategories.js";
 export let allProductsArray = [];
 let supCategoryArray = [];
 export const receivedProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
@@ -18,8 +18,11 @@ export const receivedProducts = (products) => __awaiter(void 0, void 0, void 0, 
     let randomlySelectedProducts = [];
     randomlySelectedProducts.push(allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)]);
     buildFeaturedProducts(randomlySelectedProducts);
+    console.log("All Products");
+    console.log(allProductsArray);
     sortProducts(allProductsArray);
 });
+//Issue was the missing [] (this caused it to only take 1 data object and not the array of objects)
 export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     products.map((product) => {
         let allProductCategories = product.category;
@@ -109,7 +112,7 @@ export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, func
             supCategoryName: "Home Decoration",
             subCategories: {
                 homeDecorationProducts,
-                furnitureProducts
+                furnitureProducts,
             },
             thumbnail: "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
         },
@@ -118,7 +121,7 @@ export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, func
             subCategories: {
                 beautyProducts,
                 fragrancesProducts,
-                skinCareProducts
+                skinCareProducts,
             },
             thumbnail: "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png",
         },
@@ -126,7 +129,7 @@ export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, func
             supCategoryName: "Kitchen",
             subCategories: {
                 kitchenAccessoriesProducts,
-                groceriesProducts
+                groceriesProducts,
             },
             thumbnail: "https://cdn.dummyjson.com/products/images/kitchen-accessories/Boxed%20Blender/thumbnail.png",
         },

@@ -1,17 +1,48 @@
 import { productCategory } from "../../Utils/enums.js";
-import { products, productsArray, supProductCategory } from "../../Utils/interface.js";
+import {
+  ProductsArray,
+  Products,
+  SupProductCategory,
+} from "../../Utils/interface.js";
+
 import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
-import {beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts } from "./productCategories.js";
 
-export let allProductsArray: products[] = [];
-let supCategoryArray: supProductCategory[] = [];
+import {
+  beautyProducts,
+  fragrancesProducts,
+  furnitureProducts,
+  groceriesProducts,
+  homeDecorationProducts,
+  kitchenAccessoriesProducts,
+  laptopProducts,
+  mensShirtsProducts,
+  mensShoesProducts,
+  mensWatchesProducts,
+  mobileAccessoriesProducts,
+  motorcycleProducts,
+  skinCareProducts,
+  smartphoneProducts,
+  sportsAccessoriesProducts,
+  sunglassesProducts,
+  tabletsProducts,
+  topsProducts,
+  vehicleProducts,
+  womensBagsProducts,
+  womensDressesProducts,
+  womensJewelleryProducts,
+  womensShoesProducts,
+  womensWatchesProducts,
+} from "./productCategories.js";
 
-export const receivedProducts = async (products: productsArray) => {
+export let allProductsArray: Products[] = [];
+let supCategoryArray: SupProductCategory[] = [];
+
+export const receivedProducts = async (products: ProductsArray) => {
   console.log(products);
-  
+
   allProductsArray = [...products.products];
 
-  let randomlySelectedProducts: products[] = [];
+  let randomlySelectedProducts: Products[] = [];
 
   randomlySelectedProducts.push(
     allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
@@ -19,19 +50,21 @@ export const receivedProducts = async (products: productsArray) => {
     allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
     allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
     allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
-    allProductsArray[Math.floor(Math.random() * allProductsArray.length)],
+    allProductsArray[Math.floor(Math.random() * allProductsArray.length)]
   );
-  
+
   buildFeaturedProducts(randomlySelectedProducts);
+  console.log("All Products");
+  console.log(allProductsArray);
   sortProducts(allProductsArray);
 };
 
-export const sortProducts = async (products: products) => {
-  products.map((product: products) => {
+//Issue was the missing [] (this caused it to only take 1 data object and not the array of objects)
+export const sortProducts = async (products: Products[]) => {
+  products.map((product: Products) => {
     let allProductCategories = product.category;
     const sortProductsCallback = (allProducts: productCategory) => {
       switch (allProducts) {
-
         case productCategory.beauty:
           beautyProducts.push(product);
           break;
@@ -55,7 +88,7 @@ export const sortProducts = async (products: products) => {
         case productCategory.homeDecoration:
           homeDecorationProducts.push(product);
           break;
-        
+
         case productCategory.kitchenAccessories:
           kitchenAccessoriesProducts.push(product);
           break;
@@ -87,15 +120,15 @@ export const sortProducts = async (products: products) => {
         case productCategory.mensShoes:
           mensShoesProducts.push(product);
           break;
-        
+
         case productCategory.mensWatches:
           mensWatchesProducts.push(product);
           break;
-        
+
         case productCategory.tops:
           topsProducts.push(product);
           break;
-        
+
         case productCategory.womensDresses:
           womensDressesProducts.push(product);
           break;
@@ -115,7 +148,7 @@ export const sortProducts = async (products: products) => {
         case productCategory.womensJewellery:
           womensJewelleryProducts.push(product);
           break;
-        
+
         case productCategory.motorcycle:
           motorcycleProducts.push(product);
           break;
@@ -123,46 +156,49 @@ export const sortProducts = async (products: products) => {
         case productCategory.vehicle:
           vehicleProducts.push(product);
           break;
-        
+
         case productCategory.sportsAccessories:
           sportsAccessoriesProducts.push(product);
           break;
-        
+
         default:
           console.error(`Product Category Not Found!`);
           break;
       }
     };
     sortProductsCallback(allProductCategories);
-  })
+  });
 
   supCategoryArray = [
     {
       supCategoryName: "Home Decoration",
       subCategories: {
         homeDecorationProducts,
-        furnitureProducts
+        furnitureProducts,
       },
-      thumbnail: "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
     },
     {
       supCategoryName: "Skin Products",
       subCategories: {
         beautyProducts,
         fragrancesProducts,
-        skinCareProducts
+        skinCareProducts,
       },
-      thumbnail: "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png",
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png",
     },
     {
       supCategoryName: "Kitchen",
       subCategories: {
         kitchenAccessoriesProducts,
-        groceriesProducts
+        groceriesProducts,
       },
-      thumbnail: "https://cdn.dummyjson.com/products/images/kitchen-accessories/Boxed%20Blender/thumbnail.png",
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/kitchen-accessories/Boxed%20Blender/thumbnail.png",
     },
   ];
   console.log("Sup Categories");
   console.log(supCategoryArray);
-}
+};

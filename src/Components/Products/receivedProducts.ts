@@ -36,6 +36,8 @@ import {
 
 export let allProductsArray: Products[] = [];
 let supCategoryArray: SupProductCategory[] = [];
+let mensClothes: SupProductCategory[] = [];
+let womensClothes: SupProductCategory[] = [];
 
 export const receivedProducts = async (products: ProductsArray) => {
   console.log(products);
@@ -169,6 +171,31 @@ export const sortProducts = async (products: Products[]) => {
     sortProductsCallback(allProductCategories);
   });
 
+  mensClothes = [
+    {
+      supCategoryName: "Mens Clothes",
+      subCategories: {
+        mensShirtsProducts,
+        mensShoesProducts,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png",
+    },
+  ];
+
+  womensClothes = [
+    {
+      supCategoryName: "Womens Clothes",
+      subCategories: {
+        topsProducts,
+        womensDressesProducts,
+        womensShoesProducts,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/tops/Girl%20Summer%20Dress/thumbnail.png",
+    },
+  ];
+
   supCategoryArray = [
     {
       supCategoryName: "Home Decoration",
@@ -197,6 +224,55 @@ export const sortProducts = async (products: Products[]) => {
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/kitchen-accessories/Boxed%20Blender/thumbnail.png",
+    },
+    {
+      supCategoryName: "Eletronics",
+      subCategories: {
+        laptopProducts,
+        smartphoneProducts,
+        mobileAccessoriesProducts,
+        tabletsProducts,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/thumbnail.png",
+    },
+    {
+      supCategoryName: "Clothes",
+      subCategories: {
+        mensClothes,
+        womensClothes,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/thumbnail.png",
+    },
+    {
+      supCategoryName: "Accessories",
+      subCategories: {
+        sunglassesProducts,
+        mensWatchesProducts,
+        womensWatchesProducts,
+        womensBagsProducts,
+        womensJewelleryProducts,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/thumbnail.png",
+    },
+    {
+      supCategoryName: "Sports Accessories",
+      subCategories: {
+        sportsAccessoriesProducts,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/sports-accessories/Basketball/thumbnail.png",
+    },
+    {
+      supCategoryName: "Vehicles",
+      subCategories: {
+        vehicleProducts,
+        motorcycleProducts,
+      },
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/thumbnail.png",
     },
   ];
   console.log("Sup Categories");

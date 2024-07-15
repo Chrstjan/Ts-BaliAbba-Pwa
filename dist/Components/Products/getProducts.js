@@ -7,12 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { buildLoadingAnimation } from "./Components/Misc/loadingAnimation.js";
-import { getAllCategories } from "./Components/Categories/getCategories.js";
-import { getAllProducts } from "./Components/Products/getProducts.js";
-const initPage = () => __awaiter(void 0, void 0, void 0, function* () {
-    buildLoadingAnimation();
-    getAllProducts();
-    getAllCategories();
+import { myFetchData } from "../../Utils/apiUtils.js";
+import { receivedProducts } from "./receivedProducts.js";
+export const getAllProducts = () => __awaiter(void 0, void 0, void 0, function* () {
+    const productEndpoint = "https://dummyjson.com/products?limit=0";
+    const data = yield myFetchData(productEndpoint);
+    receivedProducts(data);
 });
-initPage();

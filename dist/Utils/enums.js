@@ -1,0 +1,27 @@
+export var productCategory;
+(function (productCategory) {
+    productCategory["beauty"] = "beauty";
+    productCategory["fragrances"] = "fragrances";
+    productCategory["skinCare"] = "skin-care";
+    productCategory["furniture"] = "furniture";
+    productCategory["groceries"] = "groceries";
+    productCategory["homeDecoration"] = "home-decoration";
+    productCategory["kitchenAccessories"] = "kitchen-accessories";
+    productCategory["laptops"] = "laptops";
+    productCategory["smartphones"] = "smartphones";
+    productCategory["mobileAccessories"] = "mobile-accessories";
+    productCategory["tablets"] = "tablets";
+    productCategory["sunglasses"] = "sunglasses";
+    productCategory["mensShirts"] = "mens-shirts";
+    productCategory["mensShoes"] = "mens-shoes";
+    productCategory["mensWatches"] = "mens-watches";
+    productCategory["tops"] = "tops";
+    productCategory["womensDresses"] = "womens-dresses";
+    productCategory["womensShoes"] = "womens-shoes";
+    productCategory["womensWatches"] = "womens-watches";
+    productCategory["womensBags"] = "womens-bags";
+    productCategory["womensJewellery"] = "womens-jewellery";
+    productCategory["motorcycle"] = "motorcycle";
+    productCategory["vehicle"] = "vehicle";
+    productCategory["sportsAccessories"] = "sports-accessories";
+})(productCategory || (productCategory = {}));

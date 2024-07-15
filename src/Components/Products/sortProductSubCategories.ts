@@ -28,10 +28,10 @@ import {
   womensWatchesProducts,
 } from "./productCategories.js";
 
-export const sortProductCategories = (products: Products[]) => {
+export const sortProductSubCategories = async (products: Products[]) => {
   products.map((product: Products) => {
     let allProductCategories = product.category;
-    const sortProductsCallback = (allProducts: productCategory) => {
+    const sortProductsCallback = async (allProducts: productCategory) => {
       switch (allProducts) {
         case productCategory.beauty:
           beautyProducts.push(product);

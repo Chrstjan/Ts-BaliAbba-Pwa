@@ -1,0 +1,39 @@
+@use "../../../helpers/variables" as v;
+@use "../../../helpers/mixins" as m;
+@use "../../../helpers/placeholders";
+@use "../../../helpers/fonts";
+
+.supcategory-container {
+  text-align: center;
+
+  header {
+    h2 {
+      @extend %BaliAbba-header;
+    }
+  }
+
+  .cards-container {
+    @include m.flexBox(row, flex-start, center, 0.7rem);
+    overflow-x: auto;
+
+    .sup-category {
+      .sup-category-header {
+        position: relative;
+
+        h3 {
+          color: v.$header-background;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @extend %bread-text;
+          font-size: 32px;
+        }
+
+        img {
+          background: v.$sup-category-card-background;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { SupProductCategory } from "../../Utils/interface.js";
+import { buildSupCategories } from "./buildSupCategories.js";
 
 import {
   beautyProducts,
@@ -31,7 +32,7 @@ let supCategoryArray: SupProductCategory[] = [];
 let mensClothes: SupProductCategory[] = [];
 let womensClothes: SupProductCategory[] = [];
 
-export const sortProductSupCategories = (): void => {
+export const sortProductSupCategories = async () => {
   mensClothes = [
     {
       supCategoryName: "Mens Clothes",
@@ -136,6 +137,5 @@ export const sortProductSupCategories = (): void => {
         "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/thumbnail.png",
     },
   ];
-  console.log("Sup Categories");
-  console.log(supCategoryArray);
+  buildSupCategories(supCategoryArray);
 };

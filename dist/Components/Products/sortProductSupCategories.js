@@ -1,8 +1,18 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+import { buildSupCategories } from "./buildSupCategories.js";
 import { beautyProducts, fragrancesProducts, furnitureProducts, groceriesProducts, homeDecorationProducts, kitchenAccessoriesProducts, laptopProducts, mensShirtsProducts, mensShoesProducts, mensWatchesProducts, mobileAccessoriesProducts, motorcycleProducts, skinCareProducts, smartphoneProducts, sportsAccessoriesProducts, sunglassesProducts, tabletsProducts, topsProducts, vehicleProducts, womensBagsProducts, womensDressesProducts, womensJewelleryProducts, womensShoesProducts, womensWatchesProducts, } from "./productCategories.js";
 let supCategoryArray = [];
 let mensClothes = [];
 let womensClothes = [];
-export const sortProductSupCategories = () => {
+export const sortProductSupCategories = () => __awaiter(void 0, void 0, void 0, function* () {
     mensClothes = [
         {
             supCategoryName: "Mens Clothes",
@@ -95,6 +105,5 @@ export const sortProductSupCategories = () => {
             thumbnail: "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/thumbnail.png",
         },
     ];
-    console.log("Sup Categories");
-    console.log(supCategoryArray);
-};
+    buildSupCategories(supCategoryArray);
+});

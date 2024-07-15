@@ -7,10 +7,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { buildProductDetails } from "./buildProductDetails.js";
+import { allProductsArray } from "./receivedProducts.js";
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
 import { sortProductSupCategories } from "./sortProductSupCategories.js";
 //Issue was the missing [] (this caused it to only take 1 data object and not the array of objects)
 export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     sortProductSubCategories(products);
     sortProductSupCategories();
+});
+export const productCallback = (clickedProduct) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(clickedProduct);
+    allProductsArray.map((product) => {
+        if (product.title === clickedProduct) {
+            buildProductDetails(product);
+        }
+        else {
+            // console.error("Product not found!");
+        }
+    });
 });

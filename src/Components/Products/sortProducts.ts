@@ -1,4 +1,6 @@
 import { Products } from "../../Utils/interface.js";
+import { buildProductDetails } from "./buildProductDetails.js";
+import { allProductsArray } from "./receivedProducts.js";
 
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
 import { sortProductSupCategories } from "./sortProductSupCategories.js";
@@ -7,4 +9,15 @@ import { sortProductSupCategories } from "./sortProductSupCategories.js";
 export const sortProducts = async (products: Products[]) => {
   sortProductSubCategories(products);
   sortProductSupCategories();
+};
+
+export const productCallback = async (clickedProduct: string) => {
+  console.log(clickedProduct);
+  allProductsArray.map((product: Products) => {
+    if (product.title === clickedProduct) {
+      buildProductDetails(product);
+    } else {
+      // console.error("Product not found!");
+    }
+  });
 };

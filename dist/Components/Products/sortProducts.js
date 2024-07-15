@@ -7,12 +7,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { buildLoadingAnimation } from "./Components/Misc/loadingAnimation.js";
-import { getAllCategories } from "./Components/Categories/getCategories.js";
-import { getAllProducts } from "./Components/Products/getProducts.js";
-const initPage = () => __awaiter(void 0, void 0, void 0, function* () {
-    buildLoadingAnimation();
-    getAllProducts();
-    getAllCategories();
+import { sortProductSubCategories } from "./sortProductSubCategories.js";
+import { sortProductSupCategories } from "./sortProductSupCategories.js";
+//Issue was the missing [] (this caused it to only take 1 data object and not the array of objects)
+export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
+    sortProductSubCategories(products);
+    sortProductSupCategories();
 });
-initPage();

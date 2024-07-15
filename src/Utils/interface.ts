@@ -1,4 +1,11 @@
-export interface products {
+export interface ProductsArray {
+  limit: number;
+  products: Products[];
+  skip: number;
+  total: number;
+}
+
+export interface Products {
   availabityStatus: string;
   brand: string;
   category: string;
@@ -23,8 +30,18 @@ export interface products {
   weight: number;
 }
 
-export interface productCategories {
+export interface ProductCategories {
   name: string;
   slug: string;
   url: string;
+}
+
+export interface SubCategories {
+  [key: string]: Products[];
+}
+
+export interface SupProductCategory {
+  supCategoryName: string;
+  subCategories: SubCategories;
+  thumbnail: string;
 }

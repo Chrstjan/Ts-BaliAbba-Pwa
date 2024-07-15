@@ -1,1 +1,3 @@
-"use strict";
+export const clearContainer = (container) => {
+    container.innerHTML = "";
+};

@@ -1,0 +1,22 @@
+@use "../../helpers/variables" as v;
+@use "../../helpers/placeholders" as p;
+@use "../../helpers/fonts";
+@use "../animations";
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  .animation-box {
+    display: block;
+    width: 40vw;
+    height: 40vw;
+    border: 12px solid v.$main-header-logo-color;
+    border-top: 12px solid v.$loading-border-top;
+    border-radius: 50%;
+    animation: loadingSpin 1.2s infinite linear;
+  }
+}

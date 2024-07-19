@@ -11,6 +11,10 @@ import { clearContainer } from "../app.js";
 const app = document.getElementById("app");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
+const backArrow = document.createElement("button");
+backArrow.innerHTML = "&larr;";
+backArrow.id = "back-btn";
+cardContainer.innerHTML += backArrow;
 export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(product);
     if (app) {
@@ -23,11 +27,11 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
         </header>
         <figcaption class="product-details">
           <header class="producer-info">
-            <p>${product.brand}</p>
+            <p class="product-brand">${product.brand}</p>
             <h3>${product.title}</h3>
-            <p>${product.category}</p>
+            <p class="product-category">${product.category}</p>
           </header>
-          <div class="product-info">
+          <div class="product-user-info">
             <span class="rating-info">
               <p>Ratings: ${product.rating} &#9733;</p>
             </span>
@@ -36,6 +40,38 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
               <p>Amount: ${product.stock}</p>
             </header>
           </div>
+          <div class="product-price">
+            <span class="buy-container">
+              <span class="amount-container">
+              <h5>Amount:</h5>
+              <select class="product-amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="10+">10+</option>
+              </select>
+            </span>
+            <span class="price-container">
+              <p>${product.discountPercentage}%</p>
+              <h3>${product.price},-</h3>
+            </span>
+            </span>
+            <span class="purchase-container">
+              <button id="buy-btn">Add to cart</button>
+              <span class="warinty-container">
+                <h5>Shipping: ${product.shippingInformation}</h5>
+                <p>${product.warrantyInformation}</p>
+                <p>${product.returnPolicy}</p>
+              </span>
+            </span>
+          </span>
           <span class="product-description">
             <header class="description-header">
               <button class="description-btn">Description</button>
@@ -99,12 +135,12 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
           </span>
         </figcaption>
       </figure>`;
-        cardContainer.innerHTML = productCard;
+        cardContainer.innerHTML += productCard;
         app.appendChild(cardContainer);
         const btnsContainer = document.createElement("span");
         btnsContainer.classList.add("btns-container");
         product.images.map((image) => {
-            let imageDots = `<button class="image-btn" data-image="${image}">.</button>`;
+            let imageDots = `<button class="image-btn" data-image="${image}"></button>`;
             const header = document.querySelector(".product-header");
             if (header) {
                 btnsContainer.innerHTML += imageDots;

@@ -6,7 +6,7 @@ export interface ProductsArray {
 }
 
 export interface Products {
-  availabityStatus: string;
+  availabilityStatus: string;
   brand: string;
   category: string;
   description: string;

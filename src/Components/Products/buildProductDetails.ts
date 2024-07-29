@@ -5,17 +5,17 @@ const app = document.getElementById("app");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
 
-cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
-
 export const buildProductDetails = async (product: Products) => {
   console.log(product);
   if (app) {
     clearContainer(app);
 
+    cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
+
     const productCard = `
       <figure class="product-detail-card">
         <header class="product-header">
-          <img src="${product.thumbnail}" alt="${product.title}" />
+          <img class="product-thumbnail" src="${product.thumbnail}" alt="${product.title}" />
           <button class="like-btn">&hearts;</button>
         </header>
         <figcaption class="product-details">
@@ -129,6 +129,11 @@ export const buildProductDetails = async (product: Products) => {
     cardContainer.innerHTML += productCard;
     app.appendChild(cardContainer);
 
+    const likeBtn = document.querySelector(".like-btn");
+    likeBtn?.addEventListener("click", () => {
+      likeBtn.classList.toggle("liked-product");
+    });
+
     const btnsContainer = document.createElement("span");
     btnsContainer.classList.add("btns-container");
     product.images.map((image) => {
@@ -140,6 +145,24 @@ export const buildProductDetails = async (product: Products) => {
       }
     });
 
+    const imageBtns = document.querySelectorAll(".image-btn");
+    imageBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const clickedBtn = btn;
+        const clickedBtnSrc = btn.getAttribute("data-image");
+
+        imageBtns.forEach((btn) => btn.classList.remove("active-image"));
+        clickedBtn.classList.add("active-image");
+
+        const productThumbnail = document.querySelector(
+          ".product-thumbnail"
+        ) as HTMLImageElement; //Using type assertion to tell ts it's a image element
+        if (productThumbnail && clickedBtnSrc) {
+          productThumbnail.src = clickedBtnSrc;
+        }
+      });
+    });
+
     const descriptionBtn = document.querySelector(".description-header");
     descriptionBtn?.addEventListener("click", () => {
       const arrow = document.querySelector(".arrow-icon");
@@ -148,7 +171,7 @@ export const buildProductDetails = async (product: Products) => {
       const productDescription = document.querySelector(
         ".product-description-container"
       );
-      productDescription?.classList.toggle("hide-description");
+      productDescription?.classList.toggle("show-description");
     });
 
     const specificationsBtn = document.querySelector(".specs-header");
@@ -159,7 +182,7 @@ export const buildProductDetails = async (product: Products) => {
       const productSpecifications = document.querySelector(
         ".specifications-container"
       );
-      productSpecifications?.classList.toggle("hide-specifications");
+      productSpecifications?.classList.toggle("show-specifications");
     });
   }
 };

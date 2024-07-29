@@ -11,15 +11,15 @@ import { clearContainer } from "../app.js";
 const app = document.getElementById("app");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
-cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
 export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(product);
     if (app) {
         clearContainer(app);
+        cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
         const productCard = `
       <figure class="product-detail-card">
         <header class="product-header">
-          <img src="${product.thumbnail}" alt="${product.title}" />
+          <img class="product-thumbnail" src="${product.thumbnail}" alt="${product.title}" />
           <button class="like-btn">&hearts;</button>
         </header>
         <figcaption class="product-details">
@@ -132,6 +132,10 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
       </figure>`;
         cardContainer.innerHTML += productCard;
         app.appendChild(cardContainer);
+        const likeBtn = document.querySelector(".like-btn");
+        likeBtn === null || likeBtn === void 0 ? void 0 : likeBtn.addEventListener("click", () => {
+            likeBtn.classList.toggle("liked-product");
+        });
         const btnsContainer = document.createElement("span");
         btnsContainer.classList.add("btns-container");
         product.images.map((image) => {
@@ -142,19 +146,32 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
                 header.appendChild(btnsContainer);
             }
         });
+        const imageBtns = document.querySelectorAll(".image-btn");
+        imageBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const clickedBtn = btn;
+                const clickedBtnSrc = btn.getAttribute("data-image");
+                imageBtns.forEach((btn) => btn.classList.remove("active-image"));
+                clickedBtn.classList.add("active-image");
+                const productThumbnail = document.querySelector(".product-thumbnail"); //Using type assertion to tell ts it's a image element
+                if (productThumbnail && clickedBtnSrc) {
+                    productThumbnail.src = clickedBtnSrc;
+                }
+            });
+        });
         const descriptionBtn = document.querySelector(".description-header");
         descriptionBtn === null || descriptionBtn === void 0 ? void 0 : descriptionBtn.addEventListener("click", () => {
             const arrow = document.querySelector(".arrow-icon");
             arrow === null || arrow === void 0 ? void 0 : arrow.classList.toggle("rotate-arrow");
             const productDescription = document.querySelector(".product-description-container");
-            productDescription === null || productDescription === void 0 ? void 0 : productDescription.classList.toggle("hide-description");
+            productDescription === null || productDescription === void 0 ? void 0 : productDescription.classList.toggle("show-description");
         });
         const specificationsBtn = document.querySelector(".specs-header");
         specificationsBtn === null || specificationsBtn === void 0 ? void 0 : specificationsBtn.addEventListener("click", () => {
             const arrow = document.querySelector(".specs-arrow-icon");
             arrow === null || arrow === void 0 ? void 0 : arrow.classList.toggle("rotate-arrow");
             const productSpecifications = document.querySelector(".specifications-container");
-            productSpecifications === null || productSpecifications === void 0 ? void 0 : productSpecifications.classList.toggle("hide-specifications");
+            productSpecifications === null || productSpecifications === void 0 ? void 0 : productSpecifications.classList.toggle("show-specifications");
         });
     }
 });

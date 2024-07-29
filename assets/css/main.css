@@ -37,7 +37,7 @@
   font-size: 19px;
 }
 
-.product-detail-card .product-header .like-btn, .product-detail-card .product-header .btns-container .image-btn, .product-detail-card .product-details .product-price .purchase-container #buy-btn {
+#back-btn, .product-detail-card .product-header .like-btn, .product-detail-card .product-header .btns-container .image-btn, .product-detail-card .product-details .product-price .purchase-container #buy-btn {
   border: 0;
   background: transparent;
 }
@@ -200,6 +200,18 @@
   font-size: 18px;
 }
 
+.card-container {
+  padding-top: 4rem;
+}
+
+#back-btn {
+  position: absolute;
+  top: 9.7%;
+  left: 6%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+}
+
 .product-detail-card {
   display: flex;
   flex-direction: column;
@@ -215,12 +227,18 @@
   align-items: center;
   gap: 0.5rem;
 }
+.product-detail-card .product-header .product-thumbnail {
+  width: 100%;
+}
 .product-detail-card .product-header .like-btn {
   position: absolute;
   top: 8%;
   right: 7%;
   font-size: 28px;
   color: #b3aeae;
+}
+.product-detail-card .product-header .like-btn.liked-product {
+  color: #0aedf5;
 }
 .product-detail-card .product-header .btns-container {
   display: flex;
@@ -235,6 +253,9 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
+}
+.product-detail-card .product-header .btns-container .image-btn.active-image {
+  background: #0aedf5;
 }
 .product-detail-card .product-details {
   display: flex;
@@ -327,8 +348,11 @@
 .product-detail-card .product-details .product-description .description-header .arrow-icon.rotate-arrow {
   transform: rotate(180deg);
 }
-.product-detail-card .product-details .product-description .product-description-container.hide-description {
+.product-detail-card .product-details .product-description .product-description-container {
   display: none;
+}
+.product-detail-card .product-details .product-description .product-description-container.show-description {
+  display: block;
 }
 .product-detail-card .product-details .product-specifications .specs-header {
   display: flex;
@@ -346,8 +370,11 @@
 .product-detail-card .product-details .product-specifications .specs-header .specs-arrow-icon.rotate-arrow {
   transform: rotate(180deg);
 }
-.product-detail-card .product-details .product-specifications .specifications-container.hide-specifications {
+.product-detail-card .product-details .product-specifications .specifications-container {
   display: none;
+}
+.product-detail-card .product-details .product-specifications .specifications-container.show-specifications {
+  display: block;
 }
 .product-detail-card .product-details .product-specifications .specifications-container .specs-bar {
   display: flex;

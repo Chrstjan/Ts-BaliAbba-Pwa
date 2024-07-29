@@ -11,10 +11,7 @@ import { clearContainer } from "../app.js";
 const app = document.getElementById("app");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
-const backArrow = document.createElement("button");
-backArrow.innerHTML = "&larr;";
-backArrow.id = "back-btn";
-cardContainer.innerHTML += backArrow;
+cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
 export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(product);
     if (app) {
@@ -74,17 +71,19 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
           </span>
           <span class="product-description">
             <header class="description-header">
-              <button class="description-btn">Description</button>
+              <h4 class="description-text">Description</h4>
+              <img class="arrow-icon" src="./assets/img/svg/Arrow Icon.svg" alt="Arrow Icon" />
             </header>
-            <article>
+            <article class="product-description-container">
               <p>${product.description}</p>
             </article>
           </span>
-          <span class="product-specs">
+          <span class="product-specifications">
             <header class="specs-header">
-              <button class="specs-bnt">Specs</button>
+              <h4 class="specs-text">Specifications</h4>
+              <img class="specs-arrow-icon" src="./assets/img/svg/Arrow Icon.svg" alt="Arrow Icon" />
             </header>
-            <article>
+            <article class="specifications-container">
               <span class="specs-bar">
                 <h5>ID</h5>
                 <p>${product.id}</p>
@@ -97,33 +96,29 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
                 <h5>Weight</h5>
                 <p>${product.weight}</p>
               </span>
-              <span class="specs-bar">
+              <span class="specs-extra-bar">
                 <h5>Dimensions</h5>
-                <ul class="dimensions-list">
+                <ul class="specs-list">
                   <li>
-                    <h6>Depth</h6>
+                    <h5>Depth:</h5>
                     <p>${product.dimensions.depth}</p>
                   </li>
                   <li>
-                    <h6>Height</h6>
+                    <h5>Height:</h5>
                     <p>${product.dimensions.height}</p>
                   </li>
                   <li>
-                    <h6>Width</h6>
+                    <h5>Width:</h5>
                     <p>${product.dimensions.width}</p>
                   </li>
                 </ul>
               </span>
-              <span class="specs-bar">
+              <span class="specs-extra-bar">
                 <h5>Meta</h5>
-                <ul class="meta-list">
+                <ul class="specs-list">
                   <li>
-                    <h6>Barcode</h6>
+                    <h5>Barcode:</h5>
                     <p>${product.meta.barcode}</p>
-                  </li>
-                  <li>
-                    <h6>QR Code</h6>
-                    <p>${product.meta.qrCode}</p>
                   </li>
                 </ul>
               </span>
@@ -146,6 +141,20 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
                 btnsContainer.innerHTML += imageDots;
                 header.appendChild(btnsContainer);
             }
+        });
+        const descriptionBtn = document.querySelector(".description-header");
+        descriptionBtn === null || descriptionBtn === void 0 ? void 0 : descriptionBtn.addEventListener("click", () => {
+            const arrow = document.querySelector(".arrow-icon");
+            arrow === null || arrow === void 0 ? void 0 : arrow.classList.toggle("rotate-arrow");
+            const productDescription = document.querySelector(".product-description-container");
+            productDescription === null || productDescription === void 0 ? void 0 : productDescription.classList.toggle("hide-description");
+        });
+        const specificationsBtn = document.querySelector(".specs-header");
+        specificationsBtn === null || specificationsBtn === void 0 ? void 0 : specificationsBtn.addEventListener("click", () => {
+            const arrow = document.querySelector(".specs-arrow-icon");
+            arrow === null || arrow === void 0 ? void 0 : arrow.classList.toggle("rotate-arrow");
+            const productSpecifications = document.querySelector(".specifications-container");
+            productSpecifications === null || productSpecifications === void 0 ? void 0 : productSpecifications.classList.toggle("hide-specifications");
         });
     }
 });

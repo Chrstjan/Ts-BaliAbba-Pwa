@@ -99,5 +99,92 @@
         }
       }
     }
+
+    .product-description {
+      .description-header {
+        @include m.flexBox(row, space-between, center);
+
+        h4 {
+          @extend %BaliAbba-header;
+          font-size: 17px;
+        }
+        .arrow-icon {
+          width: 10vw;
+
+          &.rotate-arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .product-description-container {
+        &.hide-description {
+          display: none;
+        }
+
+        p {
+          @extend %bread-text;
+        }
+      }
+    }
+
+    .product-specifications {
+      .specs-header {
+        @include m.flexBox(row, space-between, center);
+
+        h4 {
+          @extend %BaliAbba-header;
+          font-size: 17px;
+        }
+        .specs-arrow-icon {
+          width: 10vw;
+          &.rotate-arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .specifications-container {
+        &.hide-specifications {
+          display: none;
+        }
+
+        .specs-bar {
+          @include m.flexBox(row, space-between, center);
+          padding: 0rem 0.3rem;
+
+          h5 {
+            @extend %margin-reset;
+          }
+
+          &:nth-child(2n + 1) {
+            background: v.$product-details-bar-background;
+          }
+        }
+
+        .specs-extra-bar {
+          padding: 0rem 0.3rem;
+
+          .specs-list {
+            @extend %margin-padding-reset;
+            padding: 0rem 0.5rem;
+
+            li {
+              list-style-type: none;
+              @include m.flexBox(row, flex-start, center);
+              padding: 0rem 0.3rem;
+
+              h5 {
+                @extend %margin-reset;
+              }
+
+              &:nth-child(2n + 1) {
+                background: v.$product-details-bar-background;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

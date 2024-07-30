@@ -16,8 +16,11 @@ export const buildSubCategories = (supCategoryName, subCategories) => __awaiter(
     console.log(subCategories);
     if (app) {
         clearContainer(app);
-        subCategories.subCategoriesLists.map((subCategory) => {
-            console.log(subCategory);
+        subCategories.subCategoriesList.map((SubCategory) => {
+            console.log(SubCategory);
+            let subCategoryCards = `<h2>${SubCategory.subCategoryName}</h2><img src="${SubCategory.thumbnail}" />`;
+            subCategoriesContainer.innerHTML += subCategoryCards;
         });
+        app.appendChild(subCategoriesContainer);
     }
 });

@@ -36,8 +36,14 @@ export interface ProductCategories {
   url: string;
 }
 
+export interface SubCategory {
+  subCategoryProducts: Products[];
+  subCategoryName: string;
+  thumbnail: string;
+}
+
 export interface SubCategories {
-  subCategoriesLists: Products[][];
+  subCategoriesList: SubCategory[];
 }
 
 export interface SupProductCategory {

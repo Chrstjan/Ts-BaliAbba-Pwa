@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-.product-detail-card .product-details .product-price .buy-container .price-container h3, .product-detail-card .product-details .product-specifications .specifications-container .specs-bar h5, .product-detail-card .product-details .product-specifications .specifications-container .specs-extra-bar .specs-list li h5 {
+.sub-category-container .sub-category-card header h3, .product-detail-card .product-details .product-price .buy-container .price-container h3, .product-detail-card .product-details .product-specifications .specifications-container .specs-bar h5, .product-detail-card .product-details .product-specifications .specifications-container .specs-extra-bar .specs-list li h5 {
   margin: 0;
 }
 
@@ -16,7 +16,7 @@
   list-style-type: none;
 }
 
-.supcategory-container header h2, .product-detail-card .product-details .product-price .purchase-container #buy-btn, .product-detail-card .product-details .product-description .description-header h4, .product-detail-card .product-details .product-specifications .specs-header h4, .main-footer .footer-header h3 {
+.sub-category-container .sub-category-card header h3, .supcategory-container header h2, .product-detail-card .product-details .product-price .purchase-container #buy-btn, .product-detail-card .product-details .product-description .description-header h4, .product-detail-card .product-details .product-specifications .specs-header h4, .main-footer .footer-header h3 {
   text-align: center;
   font-family: "Inter";
   font-size: 22px;
@@ -40,6 +40,14 @@
 #back-btn, .product-detail-card .product-header .like-btn, .product-detail-card .product-header .btns-container .image-btn, .product-detail-card .product-details .product-price .purchase-container #buy-btn {
   border: 0;
   background: transparent;
+}
+
+.sub-category-container {
+  padding-top: 4rem;
+}
+
+.sub-category-container {
+  padding-bottom: 2rem;
 }
 
 .main-header {
@@ -430,6 +438,17 @@
 }
 .supcategory-container .cards-container .sup-category .sup-category-header img {
   background: rgba(92, 90, 90, 0.5333333333);
+}
+
+.sub-category-container .sub-category-card {
+  background: rgba(238, 238, 238, 0.4);
+  border-radius: 6px;
+}
+.sub-category-container .sub-category-card header {
+  text-align: center;
+}
+.sub-category-container .sub-category-card header h3 {
+  padding: 1rem 0.4rem;
 }
 
 html {

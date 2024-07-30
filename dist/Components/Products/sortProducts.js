@@ -37,3 +37,12 @@ export const productCategoryCallback = (clickedCategory) => __awaiter(void 0, vo
         }
     });
 });
+export const subCategoryCallback = (clickedSubCategory) => __awaiter(void 0, void 0, void 0, function* () {
+    supCategoryArray.map((supCategory) => {
+        supCategory.subCategories.subCategoriesList.map((subCategory) => {
+            if (subCategory.subCategoryName === clickedSubCategory) {
+                console.log("Match found!");
+            }
+        });
+    });
+});

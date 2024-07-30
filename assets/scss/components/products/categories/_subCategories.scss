@@ -1,0 +1,24 @@
+@use "../../../helpers/variables" as v;
+@use "../../../helpers/mixins" as m;
+@use "../../../helpers/placeholders";
+@use "../../../helpers/fonts";
+
+.sub-category-container {
+  @extend %container-top-padding;
+  @extend %container-bottom-padding;
+
+  .sub-category-card {
+    background: v.$sub-category-background;
+    border-radius: 6px;
+
+    header {
+      text-align: center;
+
+      h3 {
+        @extend %margin-reset;
+        @extend %BaliAbba-header;
+        padding: 1rem 0.4rem;
+      }
+    }
+  }
+}

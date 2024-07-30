@@ -1,5 +1,6 @@
-import { SubCategories } from "../../Utils/interface.js";
+import { SubCategories, SubCategory } from "../../Utils/interface.js";
 import { clearContainer } from "../app.js";
+import { subCategoryCallback } from "./sortProducts.js";
 
 const app = document.getElementById("app");
 const subCategoriesContainer = document.createElement("div");
@@ -14,11 +15,32 @@ export const buildSubCategories = async (
   if (app) {
     clearContainer(app);
 
-    subCategories.subCategoriesList.map((SubCategory) => {
+    const backBtn = `<button id="back-btn">&larr;</button>`;
+    subCategoriesContainer.innerHTML += backBtn;
+
+    subCategories.subCategoriesList.map((SubCategory: SubCategory) => {
       console.log(SubCategory);
-      let subCategoryCards = `<h2>${SubCategory.subCategoryName}</h2><img src="${SubCategory.thumbnail}" />`;
+      let subCategoryCards = `
+        <figure class="sub-category-card" data-category="${SubCategory.subCategoryName}">
+            <header>
+                <img src="${SubCategory.thumbnail}" alt="${SubCategory.subCategoryName}" />
+                <h3>${SubCategory.subCategoryName}</h3>
+            </header>
+        </figure>`;
       subCategoriesContainer.innerHTML += subCategoryCards;
     });
     app.appendChild(subCategoriesContainer);
+
+    const subCategoryCard = document.querySelectorAll(".sub-category-card");
+    {
+      subCategoryCard.forEach((card) => {
+        card.addEventListener("click", () => {
+          const subCategoryName = card.getAttribute("data-category");
+          if (subCategoryName) {
+            subCategoryCallback(subCategoryName);
+          }
+        });
+      });
+    }
   }
 };

@@ -1,4 +1,8 @@
-import { Products, SupProductCategory } from "../../Utils/interface.js";
+import {
+  Products,
+  SubCategory,
+  SupProductCategory,
+} from "../../Utils/interface.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
 import { allProductsArray } from "./receivedProducts.js";
@@ -35,5 +39,17 @@ export const productCategoryCallback = async (clickedCategory: string) => {
       );
     } else {
     }
+  });
+};
+
+export const subCategoryCallback = async (clickedSubCategory: string) => {
+  supCategoryArray.map((supCategory: SupProductCategory) => {
+    supCategory.subCategories.subCategoriesList.map(
+      (subCategory: SubCategory) => {
+        if (subCategory.subCategoryName === clickedSubCategory) {
+          console.log("Match found!");
+        }
+      }
+    );
   });
 };

@@ -8,9 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { buildProductDetails } from "./buildProductDetails.js";
+import { buildSubCategories } from "./buildSubCategories.js";
 import { allProductsArray } from "./receivedProducts.js";
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
-import { sortProductSupCategories } from "./sortProductSupCategories.js";
+import { sortProductSupCategories, supCategoryArray, } from "./sortProductSupCategories.js";
 //Issue was the missing [] (this caused it to only take 1 data object and not the array of objects)
 export const sortProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     sortProductSubCategories(products);
@@ -24,6 +25,15 @@ export const productCallback = (clickedProduct) => __awaiter(void 0, void 0, voi
         }
         else {
             // console.error("Product not found!");
+        }
+    });
+});
+export const productCategoryCallback = (clickedCategory) => __awaiter(void 0, void 0, void 0, function* () {
+    supCategoryArray.map((supCategory) => {
+        if (supCategory.supCategoryName === clickedCategory) {
+            buildSubCategories(supCategory.supCategoryName, supCategory.subCategories);
+        }
+        else {
         }
     });
 });

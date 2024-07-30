@@ -28,7 +28,7 @@ import {
   womensWatchesProducts,
 } from "./productCategories.js";
 
-let supCategoryArray: SupProductCategory[] = [];
+export let supCategoryArray: SupProductCategory[] = [];
 let mensClothes: SupProductCategory[] = [];
 let womensClothes: SupProductCategory[] = [];
 
@@ -37,8 +37,7 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Mens Clothes",
       subCategories: {
-        mensShirtsProducts,
-        mensShoesProducts,
+        subCategoriesLists: [mensShirtsProducts, mensShoesProducts],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png",
@@ -49,9 +48,11 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Womens Clothes",
       subCategories: {
-        topsProducts,
-        womensDressesProducts,
-        womensShoesProducts,
+        subCategoriesLists: [
+          topsProducts,
+          womensDressesProducts,
+          womensShoesProducts,
+        ],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/tops/Girl%20Summer%20Dress/thumbnail.png",
@@ -62,8 +63,7 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Home Decoration",
       subCategories: {
-        homeDecorationProducts,
-        furnitureProducts,
+        subCategoriesLists: [homeDecorationProducts, furnitureProducts],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png",
@@ -71,9 +71,11 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Skin Products",
       subCategories: {
-        beautyProducts,
-        fragrancesProducts,
-        skinCareProducts,
+        subCategoriesLists: [
+          beautyProducts,
+          fragrancesProducts,
+          skinCareProducts,
+        ],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/skin-care/Vaseline%20Men%20Body%20and%20Face%20Lotion/thumbnail.png",
@@ -81,8 +83,7 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Kitchen",
       subCategories: {
-        kitchenAccessoriesProducts,
-        groceriesProducts,
+        subCategoriesLists: [kitchenAccessoriesProducts, groceriesProducts],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/kitchen-accessories/Boxed%20Blender/thumbnail.png",
@@ -90,10 +91,12 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Eletronics",
       subCategories: {
-        laptopProducts,
-        smartphoneProducts,
-        mobileAccessoriesProducts,
-        tabletsProducts,
+        subCategoriesLists: [
+          laptopProducts,
+          smartphoneProducts,
+          mobileAccessoriesProducts,
+          tabletsProducts,
+        ],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/laptops/Lenovo%20Yoga%20920/thumbnail.png",
@@ -101,8 +104,7 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Clothes",
       subCategories: {
-        mensClothes,
-        womensClothes,
+        subCategoriesLists: [mensClothes, womensClothes],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/womens-shoes/Calvin%20Klein%20Heel%20Shoes/thumbnail.png",
@@ -110,11 +112,13 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Accessories",
       subCategories: {
-        sunglassesProducts,
-        mensWatchesProducts,
-        womensWatchesProducts,
-        womensBagsProducts,
-        womensJewelleryProducts,
+        subCategoriesLists: [
+          sunglassesProducts,
+          mensWatchesProducts,
+          womensWatchesProducts,
+          womensBagsProducts,
+          womensJewelleryProducts,
+        ],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/sunglasses/Black%20Sun%20Glasses/thumbnail.png",
@@ -122,7 +126,7 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Sports Accessories",
       subCategories: {
-        sportsAccessoriesProducts,
+        subCategoriesLists: [sportsAccessoriesProducts],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/sports-accessories/Basketball/thumbnail.png",
@@ -130,8 +134,7 @@ export const sortProductSupCategories = async () => {
     {
       supCategoryName: "Vehicles",
       subCategories: {
-        vehicleProducts,
-        motorcycleProducts,
+        subCategoriesLists: [vehicleProducts, motorcycleProducts],
       },
       thumbnail:
         "https://cdn.dummyjson.com/products/images/vehicle/300%20Touring/thumbnail.png",

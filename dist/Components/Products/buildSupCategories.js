@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { clearContainer } from "../app.js";
+import { productCategoryCallback } from "./sortProducts.js";
 const app = document.getElementById("app");
 const supCategoryContainer = document.createElement("div");
 supCategoryContainer.classList.add("supcategory-container");
@@ -30,4 +31,13 @@ export const buildSupCategories = (supCategories) => __awaiter(void 0, void 0, v
     });
     supCategoryContainer.appendChild(cardsContainer);
     app === null || app === void 0 ? void 0 : app.appendChild(supCategoryContainer);
+    const supCategoryCard = document.querySelectorAll(".sup-category");
+    supCategoryCard.forEach((supCategory) => {
+        supCategory.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+            if (supCategory) {
+                const supCategoryName = supCategory.textContent.trim();
+                productCategoryCallback(supCategoryName);
+            }
+        }));
+    });
 });

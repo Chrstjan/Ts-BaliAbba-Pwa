@@ -37,7 +37,7 @@ export interface ProductCategories {
 }
 
 export interface SubCategories {
-  [key: string]: Products[];
+  subCategoriesLists: Products[][];
 }
 
 export interface SupProductCategory {

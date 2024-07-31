@@ -37,16 +37,16 @@
   font-size: 19px;
 }
 
-#back-btn, .product-detail-card .product-header .like-btn, .product-detail-card .product-header .btns-container .image-btn, .product-detail-card .product-details .product-price .purchase-container #buy-btn {
+.category-products-container .category-product-card .product-header .like-btn, #back-btn, .product-detail-card .product-header .like-btn, .product-detail-card .product-header .btns-container .image-btn, .product-detail-card .product-details .product-price .purchase-container #buy-btn {
   border: 0;
   background: transparent;
 }
 
-.sub-category-container {
+.category-products-container, .sub-category-container {
   padding-top: 4rem;
 }
 
-.sub-category-container {
+.category-products-container, .sub-category-container {
   padding-bottom: 2rem;
 }
 
@@ -449,6 +449,35 @@
 }
 .sub-category-container .sub-category-card header h3 {
   padding: 1rem 0.4rem;
+}
+
+.category-products-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.category-products-container .category-product-card {
+  text-align: center;
+}
+.category-products-container .category-product-card .product-header {
+  position: relative;
+}
+.category-products-container .category-product-card .product-header .like-btn {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  font-size: 28px;
+  color: #b3aeae;
+}
+.category-products-container .category-product-card .product-header .like-btn.liked-product {
+  color: #0aedf5;
+}
+.category-products-container .category-product-card figcaption {
+  background: rgba(161, 160, 160, 0.1333333333);
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
 }
 
 html {

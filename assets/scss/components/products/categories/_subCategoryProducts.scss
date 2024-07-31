@@ -1,0 +1,37 @@
+@use "../../../helpers/variables" as v;
+@use "../../../helpers/mixins" as m;
+@use "../../../helpers/placeholders";
+@use "../../../helpers/fonts";
+
+.category-products-container {
+  @include m.flexBox(column, center, center, 2rem);
+  @extend %container-top-padding;
+  @extend %container-bottom-padding;
+
+  .category-product-card {
+    text-align: center;
+
+    .product-header {
+      position: relative;
+
+      .like-btn {
+        position: absolute;
+        top: 1%;
+        right: 2%;
+        @extend %btn-reset;
+        font-size: 28px;
+        color: v.$product-details-btn-background;
+
+        &.liked-product {
+          color: v.$product-details-brand-color;
+        }
+      }
+    }
+
+    figcaption {
+      background: #a1a0a022;
+      border-radius: 4px;
+      padding: 0.6rem 1rem;
+    }
+  }
+}

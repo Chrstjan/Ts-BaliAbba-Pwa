@@ -3,6 +3,7 @@ import {
   SubCategory,
   SupProductCategory,
 } from "../../Utils/interface.js";
+import { buildCategoryProducts } from "./buildCategoryProducts.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
 import { allProductsArray } from "./receivedProducts.js";
@@ -47,7 +48,7 @@ export const subCategoryCallback = async (clickedSubCategory: string) => {
     supCategory.subCategories.subCategoriesList.map(
       (subCategory: SubCategory) => {
         if (subCategory.subCategoryName === clickedSubCategory) {
-          console.log("Match found!");
+          buildCategoryProducts(subCategory.subCategoryProducts);
         }
       }
     );

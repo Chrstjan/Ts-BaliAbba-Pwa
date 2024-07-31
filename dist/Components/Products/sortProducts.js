@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { buildCategoryProducts } from "./buildCategoryProducts.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
 import { allProductsArray } from "./receivedProducts.js";
@@ -41,7 +42,7 @@ export const subCategoryCallback = (clickedSubCategory) => __awaiter(void 0, voi
     supCategoryArray.map((supCategory) => {
         supCategory.subCategories.subCategoriesList.map((subCategory) => {
             if (subCategory.subCategoryName === clickedSubCategory) {
-                console.log("Match found!");
+                buildCategoryProducts(subCategory.subCategoryProducts);
             }
         });
     });

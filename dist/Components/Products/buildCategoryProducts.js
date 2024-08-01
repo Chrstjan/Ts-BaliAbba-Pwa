@@ -15,6 +15,7 @@ productsContainer.classList.add("category-products-container");
 export const buildCategoryProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     if (app) {
         clearContainer(app);
+        clearContainer(productsContainer);
         const backBtn = `<button id="back-btn">&larr;</button>`;
         productsContainer.innerHTML += backBtn;
         products.map((product) => {

@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { clearContainer } from "../app.js";
+import { sortCategoryName } from "./sortProducts.js";
 const app = document.getElementById("app");
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
@@ -15,7 +16,8 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
     console.log(product);
     if (app) {
         clearContainer(app);
-        cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
+        clearContainer(cardContainer);
+        cardContainer.innerHTML += `<button id="back-btn" data-category="${product.category}">&larr;</button>`;
         const productCard = `
       <figure class="product-detail-card">
         <header class="product-header">
@@ -132,6 +134,14 @@ export const buildProductDetails = (product) => __awaiter(void 0, void 0, void 0
       </figure>`;
         cardContainer.innerHTML += productCard;
         app.appendChild(cardContainer);
+        const backBtn = document.getElementById("back-btn");
+        backBtn === null || backBtn === void 0 ? void 0 : backBtn.addEventListener("click", () => {
+            const productCategory = backBtn.getAttribute("data-category");
+            console.log(productCategory);
+            if (productCategory) {
+                sortCategoryName(productCategory);
+            }
+        });
         const likeBtn = document.querySelector(".like-btn");
         likeBtn === null || likeBtn === void 0 ? void 0 : likeBtn.addEventListener("click", () => {
             likeBtn.classList.toggle("liked-product");

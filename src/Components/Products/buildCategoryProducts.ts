@@ -9,6 +9,7 @@ productsContainer.classList.add("category-products-container");
 export const buildCategoryProducts = async (products: Products[]) => {
   if (app) {
     clearContainer(app);
+    clearContainer(productsContainer);
 
     const backBtn = `<button id="back-btn">&larr;</button>`;
     productsContainer.innerHTML += backBtn;

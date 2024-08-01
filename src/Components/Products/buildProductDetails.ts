@@ -1,5 +1,6 @@
 import { Products } from "../../Utils/interface.js";
 import { clearContainer } from "../app.js";
+import { sortCategoryName, subCategoryCallback } from "./sortProducts.js";
 
 const app = document.getElementById("app");
 const cardContainer = document.createElement("div");
@@ -9,8 +10,8 @@ export const buildProductDetails = async (product: Products) => {
   console.log(product);
   if (app) {
     clearContainer(app);
-
-    cardContainer.innerHTML += `<button id="back-btn">&larr;</button>`;
+    clearContainer(cardContainer);
+    cardContainer.innerHTML += `<button id="back-btn" data-category="${product.category}">&larr;</button>`;
 
     const productCard = `
       <figure class="product-detail-card">
@@ -128,6 +129,15 @@ export const buildProductDetails = async (product: Products) => {
       </figure>`;
     cardContainer.innerHTML += productCard;
     app.appendChild(cardContainer);
+
+    const backBtn = document.getElementById("back-btn");
+    backBtn?.addEventListener("click", () => {
+      const productCategory = backBtn.getAttribute("data-category");
+      console.log(productCategory);
+      if (productCategory) {
+        sortCategoryName(productCategory);
+      }
+    });
 
     const likeBtn = document.querySelector(".like-btn");
     likeBtn?.addEventListener("click", () => {

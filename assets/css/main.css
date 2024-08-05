@@ -27,11 +27,6 @@
   font-size: 19px;
 }
 
-.main-header .searchbar-container .searchbar:-ms-input-placeholder {
-  font-family: "Roboto";
-  font-size: 19px;
-}
-
 .supcategory-container .cards-container .sup-category .sup-category-header h3, .product-detail-card .product-details .producer-info, .product-detail-card .product-details .product-user-info, .product-detail-card .product-details .product-description .product-description-container p, .products-container, .main-footer .footer-header p, .main-footer .contact-info, .main-footer .faq-article, .main-header .searchbar-container .searchbar::placeholder {
   font-family: "Roboto";
   font-size: 19px;
@@ -131,15 +126,6 @@
   text-align: center;
 }
 
-@-webkit-keyframes loadingSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes loadingSpin {
   0% {
     transform: rotate(0deg);
@@ -162,8 +148,7 @@
   border: 12px solid rgba(0, 0, 0, 0.8);
   border-top: 12px solid rgba(25, 178, 184, 0.537254902);
   border-radius: 50%;
-  -webkit-animation: loadingSpin 1.2s infinite linear;
-          animation: loadingSpin 1.2s infinite linear;
+  animation: loadingSpin 1.2s infinite linear;
 }
 
 .products-container {

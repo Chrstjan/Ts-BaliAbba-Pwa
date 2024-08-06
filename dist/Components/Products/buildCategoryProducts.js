@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { clearContainer } from "../app.js";
-import { productCallback } from "./sortProducts.js";
+import { productCallback, sortSubCategoryNames } from "./sortProducts.js";
 const app = document.getElementById("app");
 const productsContainer = document.createElement("div");
 productsContainer.classList.add("category-products-container");
@@ -16,7 +16,7 @@ export const buildCategoryProducts = (products) => __awaiter(void 0, void 0, voi
     if (app) {
         clearContainer(app);
         clearContainer(productsContainer);
-        const backBtn = `<button id="back-btn">&larr;</button>`;
+        const backBtn = `<button id="back-btn" data-category="${products.map(product => product.category)[0]}">&larr;</button>`;
         productsContainer.innerHTML += backBtn;
         products.map((product) => {
             console.log(product);
@@ -39,6 +39,13 @@ export const buildCategoryProducts = (products) => __awaiter(void 0, void 0, voi
             productsContainer.innerHTML += productsCards;
         });
         app === null || app === void 0 ? void 0 : app.appendChild(productsContainer);
+        const backNavigationBtn = document.getElementById("back-btn");
+        backNavigationBtn === null || backNavigationBtn === void 0 ? void 0 : backNavigationBtn.addEventListener("click", () => {
+            const subCategory = backNavigationBtn.getAttribute("data-category");
+            if (subCategory) {
+                sortSubCategoryNames(subCategory);
+            }
+        });
         const likeBtn = document.querySelectorAll(".like-btn");
         likeBtn.forEach((btn) => {
             btn.addEventListener("click", () => {

@@ -6,7 +6,7 @@ import {
 import { buildCategoryProducts } from "./buildCategoryProducts.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
-import { sortCategoryCallback } from "./productSubCategories.js";
+import { sortCategoryCallback, sortSubCategoryName } from "./productSubCategories.js";
 import { allProductsArray } from "./receivedProducts.js";
 
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
@@ -34,7 +34,7 @@ export const productCallback = async (clickedProduct: string) => {
 
 export const productCategoryCallback = async (clickedCategory: string) => {
   supCategoryArray.map((supCategory: SupProductCategory) => {
-    if (supCategory.supCategoryName === clickedCategory) {
+    if (supCategory.supCategoryName == clickedCategory) {
       buildSubCategories(
         supCategory.supCategoryName,
         supCategory.subCategories
@@ -47,6 +47,10 @@ export const productCategoryCallback = async (clickedCategory: string) => {
 export const sortCategoryName = async (clickedSubCategory: string) => {
   sortCategoryCallback(clickedSubCategory);
 };
+
+export const sortSubCategoryNames = async (clickedSubCategory: string) => {
+  sortSubCategoryName(clickedSubCategory);
+}
 
 export const subCategoryCallback = async (clickedSubCategory: string) => {
   supCategoryArray.map((supCategory: SupProductCategory) => {

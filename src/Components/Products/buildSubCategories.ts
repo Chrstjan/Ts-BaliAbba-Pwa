@@ -14,6 +14,7 @@ export const buildSubCategories = async (
   console.log(subCategories);
   if (app) {
     clearContainer(app);
+    clearContainer(subCategoriesContainer);
 
     const backBtn = `<button id="back-btn">&larr;</button>`;
     subCategoriesContainer.innerHTML += backBtn;

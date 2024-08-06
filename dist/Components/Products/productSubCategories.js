@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { productCategory } from "../../Utils/enums.js";
-import { subCategoryCallback } from "./sortProducts.js";
+import { productCategoryCallback, subCategoryCallback } from "./sortProducts.js";
 export const sortCategoryCallback = (subCategory) => __awaiter(void 0, void 0, void 0, function* () {
     //Category is hardcoded right now (might fix later)
     let productSubCategory;
@@ -94,3 +94,52 @@ export const sortCategoryCallback = (subCategory) => __awaiter(void 0, void 0, v
             break;
     }
 });
+export const sortSubCategoryName = (subProductCategory) => {
+    console.log(productCategory);
+    let supCategoryString;
+    switch (subProductCategory) {
+        case productCategory.homeDecoration:
+        case productCategory.furniture:
+            supCategoryString = "Home Decoration";
+            productCategoryCallback(supCategoryString);
+            break;
+        case productCategory.beauty:
+        case productCategory.fragrances:
+        case productCategory.skinCare:
+            supCategoryString = "Skin Products";
+            productCategoryCallback(supCategoryString);
+            break;
+        case productCategory.kitchenAccessories:
+        case productCategory.groceries:
+            supCategoryString = "Kitchen";
+            productCategoryCallback(supCategoryString);
+            break;
+        case productCategory.laptops:
+        case productCategory.smartphones:
+        case productCategory.mobileAccessories:
+        case productCategory.tablets:
+            supCategoryString = "Eletronics";
+            productCategoryCallback(supCategoryString);
+            break;
+        case productCategory.sunglasses:
+        case productCategory.mensWatches:
+        case productCategory.womensWatches:
+        case productCategory.womensBags:
+        case productCategory.womensJewellery:
+            supCategoryString = "Accessories";
+            productCategoryCallback(supCategoryString);
+            break;
+        case productCategory.sportsAccessories:
+            supCategoryString = "Sports Accessories";
+            productCategoryCallback(supCategoryString);
+            break;
+        case productCategory.vehicle:
+        case productCategory.motorcycle:
+            supCategoryString = "Vehicles";
+            productCategoryCallback(supCategoryString);
+            break;
+        default:
+            console.error(`Sup Category not found`);
+            break;
+    }
+};

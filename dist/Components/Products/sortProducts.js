@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { buildCategoryProducts } from "./buildCategoryProducts.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
-import { sortCategoryCallback } from "./productSubCategories.js";
+import { sortCategoryCallback, sortSubCategoryName } from "./productSubCategories.js";
 import { allProductsArray } from "./receivedProducts.js";
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
 import { sortProductSupCategories, supCategoryArray, } from "./sortProductSupCategories.js";
@@ -32,7 +32,7 @@ export const productCallback = (clickedProduct) => __awaiter(void 0, void 0, voi
 });
 export const productCategoryCallback = (clickedCategory) => __awaiter(void 0, void 0, void 0, function* () {
     supCategoryArray.map((supCategory) => {
-        if (supCategory.supCategoryName === clickedCategory) {
+        if (supCategory.supCategoryName == clickedCategory) {
             buildSubCategories(supCategory.supCategoryName, supCategory.subCategories);
         }
         else {
@@ -41,6 +41,9 @@ export const productCategoryCallback = (clickedCategory) => __awaiter(void 0, vo
 });
 export const sortCategoryName = (clickedSubCategory) => __awaiter(void 0, void 0, void 0, function* () {
     sortCategoryCallback(clickedSubCategory);
+});
+export const sortSubCategoryNames = (clickedSubCategory) => __awaiter(void 0, void 0, void 0, function* () {
+    sortSubCategoryName(clickedSubCategory);
 });
 export const subCategoryCallback = (clickedSubCategory) => __awaiter(void 0, void 0, void 0, function* () {
     supCategoryArray.map((supCategory) => {

@@ -17,6 +17,7 @@ export const buildSubCategories = (supCategoryName, subCategories) => __awaiter(
     console.log(subCategories);
     if (app) {
         clearContainer(app);
+        clearContainer(subCategoriesContainer);
         const backBtn = `<button id="back-btn">&larr;</button>`;
         subCategoriesContainer.innerHTML += backBtn;
         subCategories.subCategoriesList.map((SubCategory) => {

@@ -1,6 +1,6 @@
 import { SubCategories, SubCategory } from "../../Utils/interface.js";
 import { clearContainer } from "../app.js";
-import { subCategoryCallback } from "./sortProducts.js";
+import { navigateToLanding, subCategoryCallback } from "./sortProducts.js";
 
 const app = document.getElementById("app");
 const subCategoriesContainer = document.createElement("div");
@@ -31,6 +31,11 @@ export const buildSubCategories = async (
       subCategoriesContainer.innerHTML += subCategoryCards;
     });
     app.appendChild(subCategoriesContainer);
+
+    const backNavigateBtn = document.getElementById("back-btn");
+    backNavigateBtn?.addEventListener("click", () => {
+      navigateToLanding();
+    });
 
     const subCategoryCard = document.querySelectorAll(".sub-category-card");
     {

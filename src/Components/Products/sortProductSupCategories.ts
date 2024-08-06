@@ -1,4 +1,4 @@
-import { SupProductCategory } from "../../Utils/interface.js";
+import { SubCategory, SupProductCategory } from "../../Utils/interface.js";
 import { buildSupCategories } from "./buildSupCategories.js";
 
 import {
@@ -29,31 +29,22 @@ import {
 } from "./productCategories.js";
 
 export let supCategoryArray: SupProductCategory[] = [];
-let mensClothes: SupProductCategory[] = [];
-let womensClothes: SupProductCategory[] = [];
+let mensClothes: SubCategory[] = [];
+let womensClothes: SubCategory[] = [];
 
 export const sortProductSupCategories = async () => {
   mensClothes = [
     {
-      supCategoryName: "Mens Clothes",
-      subCategories: {
-        subCategoriesList: [
-          {
-            subCategoryProducts: mensShirtsProducts,
-            subCategoryName: "Mens Shirst",
-            thumbnail:
-              "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/thumbnail.png",
-          },
-          {
-            subCategoryProducts: mensShoesProducts,
-            subCategoryName: "Mens Shoes",
-            thumbnail:
-              "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png",
-          },
-        ],
-      },
+      subCategoryProducts: mensShirtsProducts,
+      subCategoryName: "Mens Shirts",
       thumbnail:
         "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png",
+    },
+    {
+      subCategoryProducts: mensShoesProducts,
+      subCategoryName: "Mens Shoes",
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png",
     },
   ];
 

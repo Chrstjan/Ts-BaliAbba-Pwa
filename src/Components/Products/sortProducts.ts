@@ -4,10 +4,17 @@ import {
   SupProductCategory,
 } from "../../Utils/interface.js";
 import { buildCategoryProducts } from "./buildCategoryProducts.js";
+import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
-import { sortCategoryCallback, sortSubCategoryName } from "./productSubCategories.js";
-import { allProductsArray } from "./receivedProducts.js";
+import {
+  sortCategoryCallback,
+  sortSubCategoryName,
+} from "./productSubCategories.js";
+import {
+  allProductsArray,
+  randomlySelectedProducts,
+} from "./receivedProducts.js";
 
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
 import {
@@ -50,7 +57,7 @@ export const sortCategoryName = async (clickedSubCategory: string) => {
 
 export const sortSubCategoryNames = async (clickedSubCategory: string) => {
   sortSubCategoryName(clickedSubCategory);
-}
+};
 
 export const subCategoryCallback = async (clickedSubCategory: string) => {
   supCategoryArray.map((supCategory: SupProductCategory) => {
@@ -62,4 +69,10 @@ export const subCategoryCallback = async (clickedSubCategory: string) => {
       }
     );
   });
+};
+
+export const navigateToLanding = async () => {
+  console.log("Going Home!");
+  buildFeaturedProducts(randomlySelectedProducts);
+  sortProducts(allProductsArray);
 };

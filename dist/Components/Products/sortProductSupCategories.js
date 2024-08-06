@@ -15,22 +15,14 @@ let womensClothes = [];
 export const sortProductSupCategories = () => __awaiter(void 0, void 0, void 0, function* () {
     mensClothes = [
         {
-            supCategoryName: "Mens Clothes",
-            subCategories: {
-                subCategoriesList: [
-                    {
-                        subCategoryProducts: mensShirtsProducts,
-                        subCategoryName: "Mens Shirst",
-                        thumbnail: "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Short%20Sleeve%20Shirt/thumbnail.png",
-                    },
-                    {
-                        subCategoryProducts: mensShoesProducts,
-                        subCategoryName: "Mens Shoes",
-                        thumbnail: "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png",
-                    },
-                ],
-            },
+            subCategoryProducts: mensShirtsProducts,
+            subCategoryName: "Mens Shirts",
             thumbnail: "https://cdn.dummyjson.com/products/images/mens-shirts/Man%20Plaid%20Shirt/thumbnail.png",
+        },
+        {
+            subCategoryProducts: mensShoesProducts,
+            subCategoryName: "Mens Shoes",
+            thumbnail: "https://cdn.dummyjson.com/products/images/mens-shoes/Nike%20Baseball%20Cleats/thumbnail.png",
         },
     ];
     womensClothes = [

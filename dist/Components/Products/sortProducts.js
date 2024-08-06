@@ -8,10 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { buildCategoryProducts } from "./buildCategoryProducts.js";
+import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
 import { buildProductDetails } from "./buildProductDetails.js";
 import { buildSubCategories } from "./buildSubCategories.js";
-import { sortCategoryCallback, sortSubCategoryName } from "./productSubCategories.js";
-import { allProductsArray } from "./receivedProducts.js";
+import { sortCategoryCallback, sortSubCategoryName, } from "./productSubCategories.js";
+import { allProductsArray, randomlySelectedProducts, } from "./receivedProducts.js";
 import { sortProductSubCategories } from "./sortProductSubCategories.js";
 import { sortProductSupCategories, supCategoryArray, } from "./sortProductSupCategories.js";
 //Issue was the missing [] (this caused it to only take 1 data object and not the array of objects)
@@ -53,4 +54,9 @@ export const subCategoryCallback = (clickedSubCategory) => __awaiter(void 0, voi
             }
         });
     });
+});
+export const navigateToLanding = () => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("Going Home!");
+    buildFeaturedProducts(randomlySelectedProducts);
+    sortProducts(allProductsArray);
 });

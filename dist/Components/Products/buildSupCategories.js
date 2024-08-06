@@ -16,6 +16,7 @@ const cardsContainer = document.createElement("span");
 cardsContainer.classList.add("cards-container");
 export const buildSupCategories = (supCategories) => __awaiter(void 0, void 0, void 0, function* () {
     clearContainer(supCategoryContainer);
+    clearContainer(cardsContainer);
     const categoriesHeader = `<header><h2>Check out our product categories</h2></header>`;
     supCategoryContainer.innerHTML += categoriesHeader;
     supCategories.map((supCategory) => {

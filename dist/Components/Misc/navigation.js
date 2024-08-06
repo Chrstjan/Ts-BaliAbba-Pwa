@@ -7,14 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { buildLoadingAnimation } from "./Components/Misc/loadingAnimation.js";
-import { getAllCategories } from "./Components/Categories/getCategories.js";
-import { getAllProducts } from "./Components/Products/getProducts.js";
-import { pageNavigation } from "./Components/Misc/navigation.js";
-const initPage = () => __awaiter(void 0, void 0, void 0, function* () {
-    buildLoadingAnimation();
-    getAllProducts();
-    getAllCategories();
-    pageNavigation();
+import { navigateToLanding } from "../Products/sortProducts.js";
+export const pageNavigation = () => __awaiter(void 0, void 0, void 0, function* () {
+    const headerLogo = document.querySelector(".mobile-header-logo");
+    headerLogo === null || headerLogo === void 0 ? void 0 : headerLogo.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+        console.log("Header Navigation");
+        navigateToLanding();
+    }));
 });
-initPage();

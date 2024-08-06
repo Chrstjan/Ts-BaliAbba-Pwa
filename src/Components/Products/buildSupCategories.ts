@@ -12,6 +12,7 @@ export const buildSupCategories = async (
   supCategories: SupProductCategory[]
 ) => {
   clearContainer(supCategoryContainer);
+  clearContainer(cardsContainer);
   const categoriesHeader = `<header><h2>Check out our product categories</h2></header>`;
   supCategoryContainer.innerHTML += categoriesHeader;
 

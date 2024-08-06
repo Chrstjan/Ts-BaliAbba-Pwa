@@ -6,7 +6,7 @@ export interface ProductsArray {
 }
 
 export interface Products {
-  availabityStatus: string;
+  availabilityStatus: string;
   brand: string;
   category: string;
   description: string;
@@ -36,8 +36,14 @@ export interface ProductCategories {
   url: string;
 }
 
+export interface SubCategory {
+  subCategoryProducts: Products[];
+  subCategoryName: string;
+  thumbnail: string;
+}
+
 export interface SubCategories {
-  [key: string]: Products[];
+  subCategoriesList: SubCategory[];
 }
 
 export interface SupProductCategory {

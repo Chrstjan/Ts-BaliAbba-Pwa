@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
 import { sortProducts } from "./sortProducts.js";
 export let allProductsArray = [];
+export let randomlySelectedProducts = [];
 export const receivedProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(products);
     allProductsArray = [...products.products];
-    let randomlySelectedProducts = [];
     randomlySelectedProducts.push(allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)], allProductsArray[Math.floor(Math.random() * allProductsArray.length)]);
     buildFeaturedProducts(randomlySelectedProducts);
     console.log("All Products");

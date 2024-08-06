@@ -4,13 +4,12 @@ import { buildFeaturedProducts } from "./buildFeaturedProducts.js";
 import { sortProducts } from "./sortProducts.js";
 
 export let allProductsArray: Products[] = [];
+export let randomlySelectedProducts: Products[] = [];
 
 export const receivedProducts = async (products: ProductsArray) => {
   console.log(products);
 
   allProductsArray = [...products.products];
-
-  let randomlySelectedProducts: Products[] = [];
 
   randomlySelectedProducts.push(
     allProductsArray[Math.floor(Math.random() * allProductsArray.length)],

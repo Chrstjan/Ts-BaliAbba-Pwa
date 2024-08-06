@@ -33,3 +33,16 @@
   font-family: "Roboto";
   font-size: 19px;
 }
+
+%btn-reset {
+  border: 0;
+  background: transparent;
+}
+
+%container-top-padding {
+  padding-top: 4rem;
+}
+
+%container-bottom-padding {
+  padding-bottom: 2rem;
+}

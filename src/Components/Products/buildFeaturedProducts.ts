@@ -1,5 +1,6 @@
 import { Products } from "../../Utils/interface.js";
 import { clearContainer } from "../app.js";
+import { productCallback } from "./sortProducts.js";
 
 const app = document.getElementById("app");
 
@@ -34,4 +35,15 @@ export const buildFeaturedProducts = async (products: Products[]) => {
   });
   featuredContainer.appendChild(cardsContainer);
   app?.appendChild(featuredContainer);
+
+  const productCards = document.querySelectorAll(".featured-product");
+  productCards.forEach((product: Element) => {
+    product.addEventListener("click", async () => {
+      let productName = product.textContent;
+      let trimmedProductName = productName?.trim();
+      if (trimmedProductName) {
+        productCallback(trimmedProductName);
+      }
+    });
+  });
 };

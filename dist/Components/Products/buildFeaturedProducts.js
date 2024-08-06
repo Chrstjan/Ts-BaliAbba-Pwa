@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { clearContainer } from "../app.js";
+import { productCallback } from "./sortProducts.js";
 const app = document.getElementById("app");
 export const buildFeaturedProducts = (products) => __awaiter(void 0, void 0, void 0, function* () {
     console.log(products);
@@ -37,4 +38,14 @@ export const buildFeaturedProducts = (products) => __awaiter(void 0, void 0, voi
     });
     featuredContainer.appendChild(cardsContainer);
     app === null || app === void 0 ? void 0 : app.appendChild(featuredContainer);
+    const productCards = document.querySelectorAll(".featured-product");
+    productCards.forEach((product) => {
+        product.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+            let productName = product.textContent;
+            let trimmedProductName = productName === null || productName === void 0 ? void 0 : productName.trim();
+            if (trimmedProductName) {
+                productCallback(trimmedProductName);
+            }
+        }));
+    });
 });

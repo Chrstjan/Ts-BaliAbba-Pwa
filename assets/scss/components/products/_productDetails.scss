@@ -1,0 +1,217 @@
+@use "../../helpers/variables" as v;
+@use "../../helpers/mixins" as m;
+@use "../../helpers/placeholders";
+@use "../../helpers/fonts";
+
+.card-container {
+  padding-top: 4rem;
+}
+
+#back-btn {
+  position: absolute;
+  top: 9.7%;
+  left: 6%;
+  transform: translate(-50%, -50%);
+  @extend %btn-reset;
+  font-size: 25px;
+}
+
+.product-detail-card {
+  @include m.flexBox(column, center, center, 0.6rem);
+
+  .product-header {
+    position: relative;
+    @include m.flexBox(column, center, center);
+
+    .product-thumbnail {
+      width: 100%;
+    }
+
+    .like-btn {
+      position: absolute;
+      top: 8%;
+      right: 7%;
+      @extend %btn-reset;
+      font-size: 28px;
+      color: v.$product-details-btn-background;
+
+      &.liked-product {
+        color: v.$product-details-brand-color;
+      }
+    }
+
+    .btns-container {
+      @include m.flexBox(row, center, center, 1rem);
+
+      .image-btn {
+        @extend %btn-reset;
+        display: block;
+        background: v.$product-details-btn-background;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+
+        &.active-image {
+          background: v.$product-details-brand-color;
+        }
+      }
+    }
+  }
+
+  .product-details {
+    @include m.flexBox(column, center, flex-start);
+    background: v.$product-details-background;
+    padding: 0.3rem 0.6rem;
+
+    .producer-info {
+      @extend %bread-text;
+      border-bottom: 2px solid v.$product-details-border-color;
+      width: 100%;
+      .product-brand {
+        color: v.$product-details-brand-color;
+      }
+    }
+
+    .product-user-info {
+      @include m.flexBox(row, space-evenly, center);
+      @extend %bread-text;
+      font-size: 16px;
+
+      .stock-header {
+        @include m.flexBox(row, center, center, 0.7rem);
+      }
+    }
+
+    .product-price {
+      .buy-container {
+        @include m.flexBox(row, space-between, center);
+
+        .amount-container {
+          @include m.flexBox(row, center, center);
+        }
+
+        .price-container {
+          position: relative;
+
+          p {
+            font-size: 12px;
+            position: absolute;
+            right: 2%;
+            top: -110%;
+          }
+
+          h3 {
+            @extend %margin-reset;
+          }
+        }
+      }
+
+      .purchase-container {
+        @include m.flexBox(column, center, center);
+
+        #buy-btn {
+          @extend %btn-reset;
+          @extend %BaliAbba-header;
+          font-size: 20px;
+          background: v.$add-to-cart-background;
+          color: v.$add-to-cart-color;
+          padding: 0.4rem 0.7rem;
+          border-radius: 6px;
+        }
+
+        .warinty-container {
+          @include m.flexBox(row, center, center);
+        }
+      }
+    }
+
+    .product-description {
+      .description-header {
+        @include m.flexBox(row, space-between, center);
+
+        h4 {
+          @extend %BaliAbba-header;
+          font-size: 17px;
+        }
+        .arrow-icon {
+          width: 10vw;
+
+          &.rotate-arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .product-description-container {
+        display: none;
+        &.show-description {
+          display: block;
+        }
+
+        p {
+          @extend %bread-text;
+        }
+      }
+    }
+
+    .product-specifications {
+      .specs-header {
+        @include m.flexBox(row, space-between, center);
+
+        h4 {
+          @extend %BaliAbba-header;
+          font-size: 17px;
+        }
+        .specs-arrow-icon {
+          width: 10vw;
+          &.rotate-arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .specifications-container {
+        display: none;
+        &.show-specifications {
+          display: block;
+        }
+
+        .specs-bar {
+          @include m.flexBox(row, space-between, center);
+          padding: 0rem 0.3rem;
+
+          h5 {
+            @extend %margin-reset;
+          }
+
+          &:nth-child(2n + 1) {
+            background: v.$product-details-bar-background;
+          }
+        }
+
+        .specs-extra-bar {
+          padding: 0rem 0.3rem;
+
+          .specs-list {
+            @extend %margin-padding-reset;
+            padding: 0rem 0.5rem;
+
+            li {
+              list-style-type: none;
+              @include m.flexBox(row, flex-start, center);
+              padding: 0rem 0.3rem;
+
+              h5 {
+                @extend %margin-reset;
+              }
+
+              &:nth-child(2n + 1) {
+                background: v.$product-details-bar-background;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

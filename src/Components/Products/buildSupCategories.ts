@@ -1,5 +1,6 @@
 import { SupProductCategory } from "../../Utils/interface.js";
 import { clearContainer } from "../app.js";
+import { productCategoryCallback } from "./sortProducts.js";
 
 const app = document.getElementById("app");
 const supCategoryContainer = document.createElement("div");
@@ -11,6 +12,7 @@ export const buildSupCategories = async (
   supCategories: SupProductCategory[]
 ) => {
   clearContainer(supCategoryContainer);
+  clearContainer(cardsContainer);
   const categoriesHeader = `<header><h2>Check out our product categories</h2></header>`;
   supCategoryContainer.innerHTML += categoriesHeader;
 
@@ -27,4 +29,14 @@ export const buildSupCategories = async (
   });
   supCategoryContainer.appendChild(cardsContainer);
   app?.appendChild(supCategoryContainer);
+
+  const supCategoryCard = document.querySelectorAll(".sup-category");
+  supCategoryCard.forEach((supCategory) => {
+    supCategory.addEventListener("click", async () => {
+      if (supCategory) {
+        const supCategoryName = supCategory.textContent.trim();
+        productCategoryCallback(supCategoryName);
+      }
+    });
+  });
 };
